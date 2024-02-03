@@ -7,13 +7,14 @@ import { slateEditor } from '@payloadcms/richtext-slate'
 import { buildConfig } from 'payload/config'
 
 import Users from './collections/Users'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
 
 export default buildConfig({
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),
   },
-  editor: slateEditor({}),
+  editor: lexicalEditor({}),
   collections: [Users],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
